@@ -20,6 +20,19 @@ background-size: cover;
 background-position: center;
 }
 
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d8c399a4; /* Transparent yellowish color */
+    color: rgb(255, 255, 255); /* Text color */
+    text-align: center; /* Centered text */
+    padding: 10px 25px; /* Padding for spacing */
+    position: fixed; /* Fixed at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Stick to the bottom */
+}
+
 
 .left{
     background: transparent;
