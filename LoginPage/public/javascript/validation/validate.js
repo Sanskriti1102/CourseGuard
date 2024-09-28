@@ -17,7 +17,7 @@ function clearErrors() {
     errorMessages.forEach(msg => msg.remove());
 }
 
-function showErrorMessage(inputElement, message, position = 'above') {
+function showErrorMessage(inputElement, message, position = 'below') {
     const errorElement = document.createElement('p');
     errorElement.classList.add('error-message');
     errorElement.textContent = message;
