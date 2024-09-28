@@ -1,9 +1,16 @@
 const btn = document.querySelector('.btn');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
+const togglePassword = document.getElementById('togglePassword');
 
 const expectedEmail = "courseguard";
 const expectedPassword = "pass@123";
+
+togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye-slash');
+});
 
 function clearErrors() {
     const errorMessages = document.querySelectorAll('.error-message');
@@ -39,7 +46,7 @@ btn.addEventListener('click', (e) => {
 
     if (emailInput.value.trim() === '') {
         emailInput.style.border = "2px solid red";
-        showErrorMessage(emailInput, "Please fill this field", 'above');
+        showErrorMessage(emailInput, "Please fill this field", 'below');
         emailValid = false;
     } else if (emailInput.value !== expectedEmail) {
         emailInput.style.border = "2px solid red";
@@ -49,7 +56,7 @@ btn.addEventListener('click', (e) => {
 
     if (passwordInput.value.trim() === '') {
         passwordInput.style.border = "2px solid red";
-        showErrorMessage(passwordInput, "Please fill this field", 'above');
+        showErrorMessage(passwordInput, "Please fill this field", 'below');
         passwordValid = false;
     } else if (passwordInput.value !== expectedPassword) {
         passwordInput.style.border = "2px solid red";
