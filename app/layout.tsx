@@ -1,9 +1,18 @@
-import "styles/tailwind.css"
+import './globals.css';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: 'CourseGuard',
+  description: 'Your E-learning Platform',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }
