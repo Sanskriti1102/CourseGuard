@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Website</title>
+    <link rel="stylesheet" href="../stylesheets/signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for Icons -->
+    <style>
+        .password-container {
+            position: relative;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 90%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1><img src="../images/digi_logo.f906b744 3.png" alt="hhh"></h1>
+        <h1><b>India's first eCommerce</b></h1>
+        <h3><b>and Applied Marketing Academy</b></h3>
+        <p><b>Industry backend programs designed by <br>
+            professionals to accelerate your digital career</b>
+        </p>
+    </div>
+    <div class="wrapper">
+        <form action="">
+            <h1><img src="https://digiaccel.in/_next/static/media/digi_logo.f906b744.svg" alt=""></h1>
+            <h2>Learners Login</h2>
+            <p>Sign into your account</p>
+            <div class="input-box">
+                Email
+                <input type="text" id="email" placeholder="Enter Email" required>
+            </div>
+            <div class="input-box">
+                Password
+                <input type="password" id="password" placeholder="Enter your Password" required>
+                <i class="fas fa-eye eye-icon" id="togglePassword"></i>
+            </div>
+            <div class="remember-forgot">
+                <label for=""><input type="checkbox">Remember me</label>
+                <a href=""><b>Forgot Password</b></a>
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+    </div>
+    <footer>
+        <div>Terms of Use | Privacy Policy | Legal Notices & Terms</div>
+        <div><b>©2023 digiaccel, All rights reserved</b></div>
+    </footer>
+
+    <script src="../javascript/validation/validate.js"></script>
+</body>
+</html>
