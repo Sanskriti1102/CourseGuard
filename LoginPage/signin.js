@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.render('signin'); 
 });
 
-app.post('/login', (req, res) => {
+app.post('/', (req, res) => {
     const { email, password } = req.body;
 
     // Simulated learner object
