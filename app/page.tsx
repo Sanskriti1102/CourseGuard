@@ -86,7 +86,7 @@ export default function LoginPage() {
               placeholder="Enter Password"
             />
             <i
-              className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'} absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer`}
+              className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'} eye absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer`}
               onClick={() => setShowPassword(!showPassword)}
             ></i>
             {error.password && <p className="text-red-500 text-sm">{error.password}</p>}
