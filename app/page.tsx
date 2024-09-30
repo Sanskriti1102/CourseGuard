@@ -48,7 +48,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex relative bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url(/images/image 4.png)' }}>
+    <div className="min-h-screen flex relative bg-no-repeat bg-cover bg-center" >
       <div className="left p-8 z-20 flex flex-col justify-center">
         <img src="/images/digi_logo.f906b744 3.png" alt="Logo" className="mb-4 wl" />
         <h1 className="text-4xl text-orange-500 font-bold"><b>India's first eCommerce</b></h1>
@@ -60,7 +60,7 @@ export default function LoginPage() {
       <div className="wrapper p-10 bg-white rounded-lg shadow-lg w-96 z-20">
         
         <form onSubmit={validateInput}>
-          <img src="https://digiaccel.in/_next/static/media/digi_logo.f906b744.svg" alt="l" className="mb-5 bl" />
+          <img src="/images/blueLogoo.png" alt="l" className="mb-5 bl" />
           <h1 className="llll"><b>Learners Login</b></h1>
           <p className="text-center mb-8">Sign into your account</p>
           <div className="mb-4">
