@@ -44,29 +44,33 @@ The data is in CSV format, consisting of 252,199 observations and 62 variables.
 #### Project Plan
 
 **Week 8: Project Base Setup**
+
 - Source control setup on [GitHub](https://github.com/Recode-Hive/Stackoverflow-Analysis)
 - Project management using tools like MS Project
 - Complete data wrangling and basic analysis
 
 **Week 10: Baseline Model Building**
+
 - Implement algorithms and build baseline models
 
 **Week 11: Model Evaluation**
+
 - Run tests and evaluate the performance of models
 
 **Week 12: Finalization**
+
 - Prepare a video presentation summarizing the analysis and insights
 
 #### Additional Technical Details
 
 > **Linear Regression (RFE techniques):**
-> 
+>
 > $$
 > y = O_1X + O_2
 > $$
 
 > **Root Mean Squared Error Calculations:**
-> 
+>
 > $$
 > rmse = \sqrt{\left(\frac{1}{n}\right)\sum_{i=1}^{n}(y_{i} - x_{i})^{2}}
 > $$

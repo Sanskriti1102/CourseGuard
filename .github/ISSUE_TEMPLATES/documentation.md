@@ -3,8 +3,7 @@ name: Documentation Update
 about: Suggest updates or improvements to the documentation.
 title: "[Docs]: "
 labels: documentation
-assignees: ''
-
+assignees: ""
 ---
 
 **Current Documentation:**

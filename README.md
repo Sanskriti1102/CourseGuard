@@ -2,11 +2,9 @@
 
 ### Project Admin: [Sanskriti Kadam](https://github.com/Sanskriti1102)
 
-
 **Overview**
 
 This website allows users to add, buy, sell, and purchase courses, interact with an AI chatbot for guidance, manage user profiles, and view a leaderboard that ranks users based on their course completion and achievements. The application is built using a modern tech stack: Next.js for frontend, Node.js for backend, and MongoDB for data storage.
-
 
 With this template, you get all the awesomeness you need:
 
@@ -222,7 +220,6 @@ To use ChatGPT Code Review, add an `OPENAI_API_KEY` environment variable with an
 
 ![image](https://user-images.githubusercontent.com/28964599/233685071-e1371edf-6359-41c3-a989-335d6ee09cb7.png)
 
-
 ## 🤝 Contribution
 
 Contributions are always welcome! To contribute, please follow these steps:
@@ -232,8 +229,6 @@ Contributions are always welcome! To contribute, please follow these steps:
 3. Make your changes, and commit them using the [Conventional Commits](https://www.conventionalcommits.org/) format.
 4. Push your changes to the forked repository.
 5. Create a pull request, and we'll review your changes.
-
-
 
 [check-workflow-badge-link]: https://github.com/Blazity/next-enterprise/actions/workflows/check.yml
 [github-license-badge-link]: https://github.com/Blazity/next-enterprise/blob/main/LICENSE

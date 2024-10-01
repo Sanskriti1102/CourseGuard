@@ -9,7 +9,10 @@ module.exports = {
     "react-app/jest",
     "plugin:storybook/recommended",
     "plugin:tailwindcss/recommended",
+    "next/core-web-vitals",
+    "prettier",
   ],
+  plugins: ["prettier"],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve("next/babel")],
@@ -17,6 +20,7 @@ module.exports = {
   },
   rules: {
     "tailwindcss/no-custom-classname": "off",
+    "prettier/prettier": "error",
     "testing-library/prefer-screen-queries": "off",
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/no-unused-vars": [
