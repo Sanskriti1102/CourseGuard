@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* You can add custom global styles here if needed */
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(#0B00AEA1,#FF950040) , url('../public/images/image\ 4.png'); /* Add your image path here */
+  background-size: cover; /* Make the background cover the entire area */
+  background-position: center; /* Center the background image */
+  margin: 0;
+  padding: 0;
+}
+
+.bl{
+  width: 150px;
+  margin-left: 9rem;
+}
+
+.wl{
+  height:240px ;
+  width: 240px;
+}
+
+.left {
+  padding-top: 200px;
+  padding-left: 100px;
+
+  flex: 1; 
+  width: 100px;
+  height: 200px;
+}
+
+.llll{
+  margin-left: 120px;
+  margin-bottom:5px;
+  font-size: 30px;
+}
+
+
+.wrapper {
+margin-right: 7rem;
+margin-top: 7rem;
+position: relative;
+height: 580px;
+width: 560px;
+}
+
+.bg-no-repeat {
+background-repeat: no-repeat; /* Prevents background image from repeating */
+}
+
+.bg-cover {
+background-size: cover; /* Makes the background cover the entire area */
+}
+
+.bg-center {
+background-position: center; /* Centers the background image */
+}
+
+.rectangle-image {
+  position: absolute; /* Position absolutely to fill the background */
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  z-index: 10; /* Ensure it's below content but above background */
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 15px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+.footer{
+  padding-left: 40px;
+  padding-top: 24px;
+  padding-right: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(192, 186, 137, 0.671);
+}
+
+.eye{
+  margin-top: 10px;
+}
