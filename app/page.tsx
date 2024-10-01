@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import React, { useState } from "react"
 // Define the structure of error state
