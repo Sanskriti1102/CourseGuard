@@ -1,8 +1,9 @@
-// app/page.tsx
+// app/page.tsx or pages/index.tsx
 import Image from "next/image"
 import React, { useState } from "react"
 import Link from "next/link";
 
+// Define the structure of error state
 interface ErrorState {
   email: string
   password: string
@@ -53,7 +54,9 @@ export default function LoginPage() {
   return (
     <div className="relative flex min-h-screen bg-cover bg-center bg-no-repeat">
       <div className="left z-20 flex flex-col justify-center p-8">
-        <Image src="/images/digi_logo.f906b744 3.png" alt="Logo" className="wl mb-4" />
+        <Link href="/">
+          <Image src="/images/digi_logo.f906b744 3.png" alt="Logo" className="wl mb-4" />
+        </Link>
         <h1 className="text-4xl font-bold text-orange-500">
           <b>India&apos;s first eCommerce</b>
         </h1>
@@ -68,7 +71,9 @@ export default function LoginPage() {
       </div>
       <div className="wrapper z-20 w-96 rounded-lg bg-white p-10 shadow-lg">
         <form onSubmit={validateInput}>
-          <Image src="/images/blueLogoo.png" alt="l" className="bl mb-5" />
+          <Link href="/">
+            <Image src="/images/blueLogoo.png" alt="l" className="bl mb-5" />
+          </Link>
           <h1 className="llll">
             <b>Learners Login</b>
           </h1>
