@@ -1,6 +1,8 @@
+// app/page.tsx
 import Image from "next/image"
 import React, { useState } from "react"
-// Define the structure of error state
+import Link from "next/link";
+
 interface ErrorState {
   email: string
   password: string
@@ -42,6 +44,9 @@ export default function LoginPage() {
 
     if (emailValid && passwordValid) {
       console.log("Login successful")
+      // Optionally navigate to a different page on successful login
+      // For example:
+      // window.location.href = '/dashboard';
     }
   }
 
@@ -104,9 +109,9 @@ export default function LoginPage() {
             <label>
               <input type="checkbox" className="mr-2" /> Remember me
             </label>
-            <a href="https://digiaccel.in/" className="text-blue-500">
-              Forgot Password
-            </a>
+            <Link href="https://digiaccel.in/">
+              <span className="text-blue-500 cursor-pointer">Forgot Password</span>
+            </Link>
           </div>
           <button
             type="submit"
@@ -118,7 +123,6 @@ export default function LoginPage() {
       </div>
       <footer className="footer bg-opacity-55/55 fixed inset-x-0 bottom-0 bg-yellow-200 p-4 text-center">
         <div>Terms of Use | Privacy Policy | Legal Notices & Terms</div>
-
         <div>
           <b>©2023 digiaccel, All rights reserved</b>
         </div>
