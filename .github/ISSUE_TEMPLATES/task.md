@@ -3,14 +3,14 @@ name: Task
 about: Create a general task for the project.
 title: "[Task]: "
 labels: task
-assignees: ''
-
+assignees: ""
 ---
 
 **Task Description:**
 A detailed description of the task.
 
 **Sub-tasks:**
+
 - [ ] Sub-task 1
 - [ ] Sub-task 2
 

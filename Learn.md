@@ -1,5 +1,5 @@
-
 # Stackoverflow Analysis Guidelines
+
 ## 👨‍💻 Demo
 
 <img src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png" align="left" height="100" width="450" >
@@ -70,10 +70,9 @@
 
 Stack overflow is a professional community for developers. They conduct developer surveys every year since 2011, and the collected data is available open-source on the web. The latest dataset 2020 was released on March 5th, 2021. With proper analysis, the Dataset would help us to answer real-world questions. For instance, we can find the most popular language that the developers use.We also can find the developer role which pays the highest salary. Our project is to analyze the last three years of the developer survey and gather meaningful insights from it.
 
-As a first step, we will clean the data by removing null values and outliers in each column. Then, refactor the columns in such a way that help us in analysis. Then we performed data analysis and machine learning on the cleaned dataset.  We  used machine learning to understand the growth of languages and the salary for data scientists in the upcoming years.
+As a first step, we will clean the data by removing null values and outliers in each column. Then, refactor the columns in such a way that help us in analysis. Then we performed data analysis and machine learning on the cleaned dataset. We used machine learning to understand the growth of languages and the salary for data scientists in the upcoming years.
 
 The questions that we answered as part of the analysis were given in the `Data analysis and visualization section`. Please refer to the Jupyter notebook file for all the codes. This `readme.md` file explains the key steps and results that we got as part of our project.
-
 
 <h1 id="2 Data Source">Data Source</h1>
 
@@ -81,25 +80,24 @@ The dataset is very diverse and came from a Stack overflow developer survey from
 
 Dataset can be downloaded from the mentioned below link:
 
-
-**Download Link** ->   https://insights.stackoverflow.com/survey
+**Download Link** -> https://insights.stackoverflow.com/survey
 
 **Available in GitHub community Exchange** ->https://education.github.com/globalcampus/exchange?utf8=%E2%9C%93&q=sanjay
 
 The data are available in the CSV format ranging from 40 to 150 MB with data of 1.5 Lakh survey participants. The attributes are 130,86 and 62 respectively for the years of 2018,2019 and 2020. For our project, we focused on specific features. As a result, we specifically chose columns which required for our analysis and dropped the ones which were not required.
 
- The reason why we chose this dataset is because of its diverse nature and it was completely uncleaned.  We, as a developer, use Stack overflow to find answers for most of the questions we get. That encouraged us to explore and derive key insights from the survey results. Also, the Insights can be used for a better understanding of the information technology and hiring employees and job seekers for preparing the career resume building.
+The reason why we chose this dataset is because of its diverse nature and it was completely uncleaned. We, as a developer, use Stack overflow to find answers for most of the questions we get. That encouraged us to explore and derive key insights from the survey results. Also, the Insights can be used for a better understanding of the information technology and hiring employees and job seekers for preparing the career resume building.
 
 <h1 id="3 Key Insights">Key Insights</h1>
 
 1. JavaScript has maintained its stronghold as the most commonly used programming language. Almost 70% of the respondents are using Javascript. HTML/CSS stands as the second most popular language with about 63%
 2. About `55%` of respondents identify themselves as **full-stack developers**, and about `20%` consider themselves as **mobile developers**.
 3. Most of the respondents were from the **United States**. For example, in the year 2020, USA had about `20%` respondents and the second highest was india with about `14%` respondents. We have plotted geographical plot using `plotly` to map how many respondents were from each country.
-4. Consistent with the data from all three year, we still see evidence that people of color are underrepresented among professional developers. About `63%` of the respondents were of `White or european descend` 
+4. Consistent with the data from all three year, we still see evidence that people of color are underrepresented among professional developers. About `63%` of the respondents were of `White or european descend`
 5. Women developers account for almost `11%` of developers in the US. Followed by Canada having `9.6%`. In countries such as Germany, India, and Poland, the participation rate is about half of that, which goes to show there is still much work to do to reach appropriate gender representation in the field.
-6. Approximately 75% of respondents worldwide completed at least the equivalent of a bachelor's degree or higher.  The average salary of respondents holding bachelors degree is $123,299. Respondents who has done Doctorate degree holds the highest mean salary of about $173,000. 
+6. Approximately 75% of respondents worldwide completed at least the equivalent of a bachelor's degree or higher. The average salary of respondents holding bachelors degree is $123,299. Respondents who has done Doctorate degree holds the highest mean salary of about $173,000.
 7. About `70%` of the developers are under 35 years of age. Only 5% of the respondents were about 50 years of age.
-8. Most of the Data scientist  respondents came from United States(1550). And the country which has the second highest number of data scientist is India(540)
+8. Most of the Data scientist respondents came from United States(1550). And the country which has the second highest number of data scientist is India(540)
 9. The country which pays the highest salary for Data scientist is Ireland($275,851). The second highest was Luxembourg($272,796). Australia pays about ($146,803)
 
 <h1 id="4 Data Cleaning">Data Cleaning</h1>
@@ -124,7 +122,6 @@ Some of the column names were not easily understandable, for example, the column
 |     ImpSyn      | CompetenceLevel |
 |     JobSat      | CurrentJobSatis |
 |     JobSeek     |    JobStatus    |
-
 
 <h2 id="4.1 Data Refactoring">4.1) Data Refactoring</h2>
 
@@ -152,18 +149,18 @@ def refactor_ed(df):
     '''function to change Education level category to Bachelors, Masters, Professional, Associate, Doctorate, No Degree'''
     conditions_ed = [(df['EdLevel'] == 'Bachelor’s degree (BA, BS, B.Eng., etc.)'),
                      (df['EdLevel'] == 'Master’s degree (MA, MS, M.Eng., MBA, etc.)'),
-                     (df['EdLevel'] == 'Professional degree (JD, MD, etc.)'),   
+                     (df['EdLevel'] == 'Professional degree (JD, MD, etc.)'),
                      (df['EdLevel'] == 'Associate degree'),
                      (df['EdLevel'] == 'Other doctoral degree (Ph.D, Ed.D., etc.)'),
-                     (df['EdLevel'] == 'Some college/university study without earning a degree') 
-                     | (df['EdLevel'] == 'Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)') 
+                     (df['EdLevel'] == 'Some college/university study without earning a degree')
+                     | (df['EdLevel'] == 'Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)')
                      | (df['EdLevel'] == 'Primary/elementary school')
                      | (df['EdLevel'] == 'I never completed any formal education')]
 
     choices_ed = ['Bachelors', 'Masters', 'Professional', 'Associate', 'Doctorate', 'No Degree']
 
     df['EdLevel'] = np.select(conditions_ed, choices_ed, default = np.NaN)
-    
+
     return df
 
 # applying function to subsets
@@ -242,11 +239,11 @@ The above process has been carried out for all three data frames `2018` `2019` `
 
 <img src="https://recodehive.com/wp-content/uploads/2021/05/Message-from-Founder-1024x576.png">
 
-As with any large data sources, we had a lot of null values that had to be handled. For instance, the 2020 dataset had 371,506 missing values(cells) in total.  Overview of how we handled null values for a few of the columns are given below. Please check out jupyter notebook for how we handled null values in all other columns in all three dataset `2018` `2019` `2020`
+As with any large data sources, we had a lot of null values that had to be handled. For instance, the 2020 dataset had 371,506 missing values(cells) in total. Overview of how we handled null values for a few of the columns are given below. Please check out jupyter notebook for how we handled null values in all other columns in all three dataset `2018` `2019` `2020`
 
-#### Age 
+#### Age
 
-The "Age" column had 19,015 missing values in the 2020 data frame. We filled the null values with the mean value of each gender. 
+The "Age" column had 19,015 missing values in the 2020 data frame. We filled the null values with the mean value of each gender.
 
 ```python
 #fill Age's null values with mean of each gender
@@ -258,14 +255,14 @@ df2020['Age'] = df2020['Age'].apply(str).str[:2]
 df2020['Age'] = df2020['Age'].apply(int)
 ```
 
-**outliers** ->  removed the respondents whose ages are more than 60 years and less than 15 years. 
+**outliers** -> removed the respondents whose ages are more than 60 years and less than 15 years.
 
 ```python
 #Cleaning Age's outliers from each gender)
 df2020 = df2020[(df['Age'] >= 15) & (df2020['Age'] <= 60)]
 ```
 
-For some of the columns, we made use of `bill()` and `fill()` method to fill the null values and made sure that filling the values this way dose not change the order of values. Let us take an example of the `DevType` column. 
+For some of the columns, we made use of `bill()` and `fill()` method to fill the null values and made sure that filling the values this way dose not change the order of values. Let us take an example of the `DevType` column.
 
 | DevType                                                 | Before filling null | After bill() & fill() |
 | ------------------------------------------------------- | ------------------- | --------------------- |
@@ -279,7 +276,7 @@ For some of the columns, we made use of `bill()` and `fill()` method to fill the
 | front-end;Developer, full-stack                         | 667                 | 758                   |
 | back-end;Developer, desktop or enterprise applications  | 528                 | 617                   |
 
-As we can see above,the order of values never changed while filling the null values with bfill and ffill method. 
+As we can see above,the order of values never changed while filling the null values with bfill and ffill method.
 
 For `EdLevel` we had only 993 null values. So we assigned it to bachelors degree as the number of respondents who have bachelors degree were 20,290.
 
@@ -317,10 +314,9 @@ We made use of `plotly` to create a Geoplot showing where the respondents are fr
 
 <img src="Data/Images/Geo plot.png">
 
-
 <h2 id="5.2 Impact of participation rate due to different ethnicity">5.2) Impact of participation rate due to different ethnicity</h2>
 
-Consistent with data in all three years, We found that `white or european descent` has the highest participation rate overall. 
+Consistent with data in all three years, We found that `white or european descent` has the highest participation rate overall.
 
 ```python
 fig, ax = plt.subplots(figsize=(15, 5))
@@ -341,17 +337,15 @@ for i, v in enumerate(count):
 
 The most popular language that developers worked on between 2018 to 2020 is JavaScript(14%). The second and third highest working language is HTML/CSS(13%) and SQL(11%). JavaScript and SQL had the same steady increasing trend over the three years. The percentage of HTML/CSS was slightly increased from 2018 to 2019. However, it dropped to the same level as 2018 in 2020. Python was responsible for about 9% in 2018. After then, it decreased to 8% in 2019 and it rose 1% in 2020.
 
-There are some languages that were in only 2019; Elixir, Clojure, F#, Web assembly, and Erlang. Perl, Haskell, Julia were in the 2019 and 2020 with  small percentages.
+There are some languages that were in only 2019; Elixir, Clojure, F#, Web assembly, and Erlang. Perl, Haskell, Julia were in the 2019 and 2020 with small percentages.
 
 <img src="Data/Images/popular language distribution.png">
-
 
 <h2 id="5.4 Distribution of developers based on their developer role">5.4) Distribution of developers based on their developer role</h2>
 
 Most of the respondents were either back-end or full-stack developers.  For those who are working as marketing and sales professionals, their percentage is lowest compare to others.
 
 <img src="Data/Images/devtype distribution.png">
-
 
 <h2 id="5.5 Distribution of respondents based on age">5.5) Distribution of respondents based on age</h2>
 
@@ -385,7 +379,6 @@ plt.show()
 
 <img src="Data/Images/salary top ten countries.png">
 
-
 <h2 id="5.7 Analysis of impact of education on salary">5.7) Analysis of impact of education on salary</h2>
 
 The respondents who have done Doctorate have the highest mean salary among all other education levels. Secondly, the respondents who have done Bachelors degree has more salary than that of Masters degree holders. This may be due to years of professional coding experience and due to the higher number of respondents in that category than that of Masters degree(No of respondents in Bachelor degree is 35659 and number of respondents in masters degree is 16940)
@@ -394,10 +387,9 @@ What is interesting is that the respondents who do not have any degree have a me
 
 <img src="Data/Images/salary on edlevel.png">
 
-
 <h2 id="5.8 Gender distribution among top five countries in 2019">5.8) Gender distribution among top five countries in 2019</h2>
 
-Based on the top 5 countries where the respondents have given the survey, we categorized male and female respondents in those countries. 
+Based on the top 5 countries where the respondents have given the survey, we categorized male and female respondents in those countries.
 
 In terms of male and female statistics, it can be realized that the US has the relatively largest female percentage at about 10.9% followed by Canada and UK at 9.6% and 8.0% respectively. Female respondents were around 5% in India and Germany which is the least among the top 5 counties.
 
@@ -409,9 +401,7 @@ There are 5,788 data scientists who responded to the Stackoverflow survey in `20
 
 <img src="Data/Images/DS_top contries.png">
 
-
 <h2 id="5.10 Countries which pays the most for data scientist in 2019">5.10) Countries which pays the most for data scientist in 2019</h2>
-
 
 In 2019, the top three countries which have a highest mean annual salary of a data scientist are Ireland (`$275,851`), Luxembourg (​`$272,769`), and the USA (`$265,211`). Apart from that, the mean salary of the rest countries is less than (`$200,000`) per year. Japan provides the highest mean annual salary among Asian countries (`$118,969`)
 
@@ -425,7 +415,7 @@ In 2019, the top three countries which have a highest mean annual salary of a da
 
 Each Stack Overflow survey has a 'LanguageWorkedWith' column, which describes programming languages that respondents worked in over the past year.
 We have measured and used the fraction of each language and the total, instead of using the counts of each language in a year as it is more
-convenient for comparison. 
+convenient for comparison.
 
 <img src="Data/Images/languages.PNG">
 
@@ -433,8 +423,8 @@ From 2018 to 2020 the 10 most popular programming languages remain the same: Jav
 <img src="Data/Images/ML_fraction of languages.png">
 
 We planned to predict the growth of languages for upcoming years by using time series forecasting such as the ARIMA model.
-Unfortunately, we have only 3 years of dataset, there is not enough data to use time series forecasting. 
-With a very small number of observations, there is insufficient data to split the observations into training and testing. 
+Unfortunately, we have only 3 years of dataset, there is not enough data to use time series forecasting.
+With a very small number of observations, there is insufficient data to split the observations into training and testing.
 More observations are needed to build the predictive model. **Further exploration in future projects may be needed to explain this question**
 
 <h2 id="6.2 Predicting the salary of data scientist">6.2) Predicting the salary of data scientist</h2>
@@ -445,36 +435,34 @@ In the features selection process, there are 5 features which are Age, Country, 
 
 Six classification models for machine learning were used to predict the salary of the data scientists. Our findings are given below.
 
-| Sno  | Model                   | Accuracy | R2 Score | Time |
-| ---- | ----------------------- | -------- | ----------- | ---- |
-| 1    | Decision Tree           | 0.830    | 0.32        | 0.06 |
-| 2    | Multinomial Naive Bayes | 0.833    | 0.33        | 0.01 |
-| 3    | Gaussian Naive Bayes    | 0.63     | -0.44       | 0.01 |
-| 4    | Logistic Regression     | 0.85     | 0.40        | 0.10 |
-| 5    | Random Forest           | 0.83     | 0.32        | 1.31 |
-| 6    | Linear SVC              | 0.85     | 0.40        | 0.03 |
+| Sno | Model                   | Accuracy | R2 Score | Time |
+| --- | ----------------------- | -------- | -------- | ---- |
+| 1   | Decision Tree           | 0.830    | 0.32     | 0.06 |
+| 2   | Multinomial Naive Bayes | 0.833    | 0.33     | 0.01 |
+| 3   | Gaussian Naive Bayes    | 0.63     | -0.44    | 0.01 |
+| 4   | Logistic Regression     | 0.85     | 0.40     | 0.10 |
+| 5   | Random Forest           | 0.83     | 0.32     | 1.31 |
+| 6   | Linear SVC              | 0.85     | 0.40     | 0.03 |
 
-Most models show relatively high accuracy scores(more than 80%), unfortunately, none of them has acceptable R2 values. 
-The best model is Logistic Regression with R2 just approximately 0.4. 
+Most models show relatively high accuracy scores(more than 80%), unfortunately, none of them has acceptable R2 values.
+The best model is Logistic Regression with R2 just approximately 0.4.
 It is not confidently said that Logistic Regression is a good fit to predict the salary of Data Scientists.
-
-
 
 <h2 id="6.2.1 Computing Hamming Loss and Jacard Score on the above models">6.2.1) Computing Hamming Loss and Jacard Score on the above models</h2>
 
 - Hamming loss is the fraction of labels that are incorrectly predicted ( evaluation metrics for a classifier model.)<br>
   Hamming loss value range between 0 and 1, Having HL less is the best.
 - The Jaccard Index, also known as the Jaccard similarity coefficient, is a statistic used in understanding the similarities between sample sets. (To measure Similarity)<br>
-  Jaccard  is a measurement utilized in understanding the similitudes between test sets. The estimation underscores comparability between limited example sets and is    officially characterized as the size of the crossing point separated by the size of the association of the example sets.
+  Jaccard is a measurement utilized in understanding the similitudes between test sets. The estimation underscores comparability between limited example sets and is officially characterized as the size of the crossing point separated by the size of the association of the example sets.
 
-| Sno  | Model                   | HL       | Jaccard Score | 
-| ---- | ----------------------- | -------- | -----------   |
-| 1    | Random Forest           | 0.1660   | 0.7088        | 
-| 2    | MLPClassifier           | 0.1729   | 0.7081        | 
-| 3    | SGDClassifier           | 0.1473   | 0.7400        | 
-| 4    | Logistic Regression     | 0.1481   | 0.7402        | 
-| 5    | MultinomialNB           | 0.1680   | 0.7124        | 
-| 6    | Linear SVC              | 0.1481   | 0.7444        |
+| Sno | Model               | HL     | Jaccard Score |
+| --- | ------------------- | ------ | ------------- |
+| 1   | Random Forest       | 0.1660 | 0.7088        |
+| 2   | MLPClassifier       | 0.1729 | 0.7081        |
+| 3   | SGDClassifier       | 0.1473 | 0.7400        |
+| 4   | Logistic Regression | 0.1481 | 0.7402        |
+| 5   | MultinomialNB       | 0.1680 | 0.7124        |
+| 6   | Linear SVC          | 0.1481 | 0.7444        |
 
 It has been found that better Hamming loss has been found in Logistic Regression and Linear SVC which is 0.14815
 Jaccard similarity scores gives us the distribution of label sets when using the models.
@@ -482,13 +470,15 @@ Jaccard similarity scores gives us the distribution of label sets when using the
 <h2 id="6.3 Predicting what causing Job Satisfaction">6.3) Predicting what causing Job Satisfaction</h2>
 
 An examination of work satisfaction variables based on Stack Over Flow survey data from 2020.
-Job satisfaction can be defined by factors such as compensation, benefits, work environment, team members, work-life balance, education level, place, and so on. 
+Job satisfaction can be defined by factors such as compensation, benefits, work environment, team members, work-life balance, education level, place, and so on.
+
 - Best mean cross-validation score: -0.262
 - Test-set score: -0.261
 
 Here Random Forest is used to Predict the Job satisfaction, model did not yield much better output and turned out to be very complex to get insights. Logistic Regression or Random forest Regressor which may yield good results. Proceeding with Logistic Regression to find features affecting Job Satisfaction.
 
 ### Used Logistic Regression
+
 By analysing the Stack Over Flow survey data from 2020, tried to find some features that are negatively and positively affecting job satisfaction in various countries.
 Used Sklearn library to create a Logistic Regression model. Before creting model, need to create data, Using model coefficients, features that has negative and positive effect on job satisfaction to be calculated.
 
@@ -514,6 +504,7 @@ predictions = [round(value) for value in y_pred]
 accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
+
 <img src="https://recodehive.com/wp-content/uploads/2021/05/Logistic-Regression.png">
 
 Top 2 features negatively effecting Job Satisfaction are age, country. So, in the elderly ages job satisfaction may decrease because of the personal expectation increases. In the same way, as the professional coding years increase, satisfaction may decrease.
@@ -524,19 +515,13 @@ Top 2 features negatively effecting Job Satisfaction are age, country. So, in th
 
 <h1 id="7 Conclusion">Conclusion:</h1>
 
-Overall, we performed various analyses on the Stack overflow developer survey and derived insights from it. 
+Overall, we performed various analyses on the Stack overflow developer survey and derived insights from it.
 We found which country has the highest no of respondents, which is the most popular language, education level of respondents, different roles of developers, and so on.
 
-Additionally, we performed machine learning models to predict the growth of languages, the salary of data scientists, what is causing job satisfaction.  We build six machine learning models for the same.
+Additionally, we performed machine learning models to predict the growth of languages, the salary of data scientists, what is causing job satisfaction. We build six machine learning models for the same.
 
 This repo is crafted with ♥ and owned/maintained by @sanjay-kv
-
-
 
 ## 🙏 Support
 
 This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
-
-
-
-

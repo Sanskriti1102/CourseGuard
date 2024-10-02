@@ -2,25 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* You can add custom global styles here if needed */
 
 body {
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(#0B00AEA1,#FF950040) , url('../public/images/image\ 4.png'); /* Add your image path here */
+  background-image: linear-gradient(#0b00aea1, #ff950040), url("../public/images/image\ 4.png"); /* Add your image path here */
   background-size: cover; /* Make the background cover the entire area */
   background-position: center; /* Center the background image */
   margin: 0;
   padding: 0;
 }
 
-.bl{
+.bl {
   width: 150px;
   margin-left: 9rem;
 }
 
-.wl{
-  height:240px ;
+.wl {
+  height: 240px;
   width: 240px;
 }
 
@@ -28,36 +27,35 @@ body {
   padding-top: 200px;
   padding-left: 100px;
 
-  flex: 1; 
+  flex: 1;
   width: 100px;
   height: 200px;
 }
 
-.llll{
+.llll {
   margin-left: 120px;
-  margin-bottom:5px;
+  margin-bottom: 5px;
   font-size: 30px;
 }
 
-
 .wrapper {
-margin-right: 7rem;
-margin-top: 7rem;
-position: relative;
-height: 580px;
-width: 560px;
+  margin-right: 7rem;
+  margin-top: 7rem;
+  position: relative;
+  height: 580px;
+  width: 560px;
 }
 
 .bg-no-repeat {
-background-repeat: no-repeat; /* Prevents background image from repeating */
+  background-repeat: no-repeat; /* Prevents background image from repeating */
 }
 
 .bg-cover {
-background-size: cover; /* Makes the background cover the entire area */
+  background-size: cover; /* Makes the background cover the entire area */
 }
 
 .bg-center {
-background-position: center; /* Centers the background image */
+  background-position: center; /* Centers the background image */
 }
 
 .rectangle-image {
@@ -68,8 +66,6 @@ background-position: center; /* Centers the background image */
   height: 10px;
   z-index: 10; /* Ensure it's below content but above background */
 }
-
-
 
 .container {
   display: flex;
@@ -127,7 +123,7 @@ h2 {
   margin-top: 5px;
 }
 
-.footer{
+.footer {
   padding-left: 40px;
   padding-top: 24px;
   padding-right: 40px;
@@ -140,6 +136,6 @@ h2 {
   background-color: rgba(192, 186, 137, 0.671);
 }
 
-.eye{
+.eye {
   margin-top: 10px;
 }
