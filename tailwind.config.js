@@ -17,6 +17,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+<<<<<<< Updated upstream
         primary: {
           50: "#eff6ff",
           100: "#dbeafe",
@@ -80,6 +81,10 @@ module.exports = {
       },
       minWidth: {
         ...defaultTheme.width,
+=======
+        primary: "#f97316", // Adding custom colors if necessary
+        'light-grey': "#828282",
+>>>>>>> Stashed changes
       },
     },
   },

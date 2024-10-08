@@ -1,6 +1,14 @@
+<<<<<<< Updated upstream
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "lp-items"
+=======
+// app/page.tsx (or pages/index.tsx if using pages directory)
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import Link from "next/link";
+>>>>>>> Stashed changes
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -21,6 +29,7 @@ export const metadata: Metadata = {
 
 export default function Web() {
   return (
+<<<<<<< Updated upstream
     <>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
@@ -42,6 +51,47 @@ export default function Web() {
             >
               Deploy Now
             </Button>
+=======
+    <div className="relative flex min-h-screen bg-cover bg-center bg-no-repeat">
+      <div className="left z-20 flex flex-col justify-center p-8">
+        <Link href="/">
+          <Image src="/images/digi_logo.f906b744 3.png" width={40} height={40} alt="Logo" className="wl mb-4" />
+        </Link>
+        <h1 className="text-4xl font-bold text-orange-500">
+          <b>India&apos;s first eCommerce</b>
+        </h1>
+        <h3 className="text-2xl text-white">
+          <b>and Applied Marketing Academy</b>
+        </h3>
+        <p className="mt-2 text-white">
+          <b>
+            Industry backend programs designed by <br /> professionals to accelerate your digital career
+          </b>
+        </p>
+      </div>
+      <div className="wrapper z-20 w-96 rounded-lg bg-white p-10 shadow-lg">
+        <form onSubmit={validateInput}>
+          <Link href="/">
+            <Image src="/images/blueLogoo.png" alt="Logo" width={40} height={40} className="bl mb-5 cursor-pointer" />
+          </Link>
+          <h1 className="llll">
+            <b>Learners Login</b>
+          </h1>
+          <p className="mb-8 text-center">Sign into your account</p>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700">
+              Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={`w-full rounded border p-3 ${error.email ? "border-red-500" : "border-gray-300"}`}
+              placeholder="Enter Email"
+            />
+            {error.email && <p className="text-sm text-red-500">{error.email}</p>}
+>>>>>>> Stashed changes
           </div>
         </div>
       </section>
