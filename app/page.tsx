@@ -1,3 +1,4 @@
+"use client";
 // app/page.tsx (or pages/index.tsx if using pages directory)
 import Image from "next/image";
 import React, { useState } from "react";
