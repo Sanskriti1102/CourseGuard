@@ -64,12 +64,12 @@ module.exports = {
         6: "6px",
         8: "8px",
       },
-      minHeight: {
-        ...defaultTheme.height,
-      },
-      minWidth: {
-        ...defaultTheme.width,
-      },
+      // minHeight: {
+      //   ...defaultTheme.height,
+      // },
+      // minWidth: {
+      //   ...defaultTheme.width,
+      // },
     },
   },
   plugins: [],
