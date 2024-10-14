@@ -75,7 +75,7 @@ const LoginPage = () => {
       </div>
       <div className="wrapper z-20 w-96 rounded-lg bg-white p-10 shadow-lg">
         <form onSubmit={validateInput}>
-          <Link href="/">
+          <Link href="/" className="flex w-full justify-center">
             <Image src="/images/blueLogoo.png" width={138} height={72} alt="Logo" className="bl mb-5 cursor-pointer" />
           </Link>
           <h1 className="llll">
