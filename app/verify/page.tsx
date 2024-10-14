@@ -4,50 +4,39 @@ import Link from "next/link"
 import Icons from "../../assets/icons"
 import { useState } from "react"
 import OTPInput from "react-otp-input"
+import { useRouter } from "next/navigation"
 
 // Define the structure of error state
 interface ErrorState {
-  email: string
-  password: string
+  otp: string
 }
 
 function VerifyEmailPage() {
-  const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [otp, setOtp] = useState<string>("000000")
-  const [error, setError] = useState<ErrorState>({ email: "", password: "" })
-  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [error, setError] = useState<ErrorState>({ otp: "" })
+  const router = useRouter();
 
   const validateInput = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    let emailValid = true
-    let passwordValid = true
+    let otpValid = true
 
-    const expectedEmail = "courseguard"
-    const expectedPassword = "pass@123"
+    const expectedOtp = "000000"
 
-    let tempErrors: ErrorState = { email: "", password: "" }
+    let tempErrors: ErrorState = { otp: "" }
 
-    if (email.trim() === "") {
-      tempErrors.email = "Please fill this field"
-      emailValid = false
-    } else if (email !== expectedEmail) {
-      tempErrors.email = "Invalid email"
-      emailValid = false
-    }
-
-    if (password.trim() === "") {
-      tempErrors.password = "Please fill this field"
-      passwordValid = false
-    } else if (password !== expectedPassword) {
-      tempErrors.password = "Wrong password"
-      passwordValid = false
+    if (otp.trim() === "") {
+      tempErrors.otp = "Please fill this field"
+      otpValid = false
+    } else if (otp !== expectedOtp) {
+      tempErrors.otp = "Invalid otp"
+      otpValid = false
     }
 
     setError(tempErrors)
 
-    if (emailValid && passwordValid) {
-      console.log("Login successful")
+    if (otpValid) {
+      console.log("Otp valid")
     }
   }
 
@@ -79,7 +68,7 @@ function VerifyEmailPage() {
         <form className="h-full" onSubmit={validateInput}>
           <div className="flex h-full w-full flex-col items-center justify-between">
             <div className="flex w-full flex-col">
-              <Link href="/" className="">
+              <Link href="/" className="flex justify-center">
                 <Image
                   src="/images/blueLogoo.png"
                   alt="Logo"
@@ -103,13 +92,13 @@ function VerifyEmailPage() {
                   Enter OTP
                 </label>
                 {/* <input
-                                    type="text"
-                                    id="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className={`w-full rounded border p-3 ${error.email ? "border-red-500" : "border-gray-300"}`}
-                                    placeholder="Enter Email"
-                                /> */}
+                  type="text"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={`w-full rounded border p-3 ${error.email ? "border-red-500" : "border-gray-300"}`}
+                  placeholder="Enter Email"
+                /> */}
                 <OTPInput
                   value={otp}
                   onChange={setOtp}
@@ -118,13 +107,14 @@ function VerifyEmailPage() {
                   containerStyle={`flex items-center gap-2`}
                   renderInput={(props) => <input {...props} />}
                 />
-                {error.email && <p className="text-sm text-red-500">{error.email}</p>}
+                {error.otp && <p className="text-sm text-red-500">{error.otp}</p>}
               </div>
             </div>
             <div className="flex w-full items-center justify-between gap-4">
               <button
                 type="submit"
-                className="block w-full rounded-full border-2 border-orange-500 bg-white p-3 font-bold text-orange-500 transition hover:bg-orange-600"
+                className="block w-full rounded-full border-2 border-orange-500 bg-white p-3 font-bold text-orange-500 transition hover:bg-orange-600 hover:text-white"
+                onClick={() => {router.push("/forget-password")}}
               >
                 Cancel
               </button>
