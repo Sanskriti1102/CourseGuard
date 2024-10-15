@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", // Add this line to ensure Tailwind scans the components for class names
+    "components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {

@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(#0b00aea1, #ff950040), url("../public/images/image\ 4.png"); /* Add your image path here */
+  /* background-image: linear-gradient(#0b00aea1, #ff950040), url("../public/images/image\ 4.png"); Add your image path here */
   background-size: cover; /* Make the background cover the entire area */
   background-position: center; /* Center the background image */
   margin: 0;
