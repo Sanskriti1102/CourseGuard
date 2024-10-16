@@ -49,9 +49,9 @@ export default function HomeScreen() {
           ))}
         </div>
 
-        <div className="flex items-start">
+        <div className="flex items-start justify-between">
           {/* left side */}
-          <div className="pr-8">
+          <div className="w-[70%] pr-8">
             {/* Unfinished Courses */}
             <div className="mb-6">
               <div className="flex items-center justify-between">
@@ -137,7 +137,7 @@ export default function HomeScreen() {
             </div>
           </div>
           {/* right side */}
-          <div className="">
+          <div className="w-[30%]">
             <h2 className="mb-4 text-start text-[24px] text-[#102844]">My Community</h2>
             <div className="space-y-2 rounded-[16px] bg-white">
               {community.map((community, index) => (
