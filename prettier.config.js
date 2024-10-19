@@ -4,4 +4,10 @@ module.exports = {
   tabWidth: 2,
   printWidth: 120,
   semi: false,
+  "prettier/prettier": [
+    "error",
+    {
+      endOfLine: "auto",
+    },
+  ],
 }

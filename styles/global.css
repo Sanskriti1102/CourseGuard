@@ -1,0 +1,28 @@
+@keyframes drawCircle {
+  from {
+    stroke-dasharray: 0, 282.6;
+  }
+  to {
+    stroke-dasharray: 282.6, 0;
+  }
+}
+
+@keyframes drawTick {
+  from {
+    stroke-dasharray: 0, 100;
+  }
+  to {
+    stroke-dasharray: 100, 0;
+  }
+}
+
+.circle {
+  stroke-dasharray: 282.6, 282.6;
+  animation: drawCircle 2s ease-out forwards;
+}
+
+.tick {
+  stroke-dasharray: 100, 100;
+  animation: drawTick 1s ease-out forwards;
+  animation-delay: 1s;
+}

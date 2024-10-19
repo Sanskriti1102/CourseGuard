@@ -60,7 +60,13 @@ const LoginPage = () => {
 
       <div className="left z-20 flex flex-col justify-center p-8">
         <Link href="/">
-          <Image src="/images/digi_logo.f906b744 3.png" alt="Logo" width={162} height={80} className="mb-4" />
+          <Image
+            src="/images/digi_logo.f906b744 3.png"
+            width={207}
+            height={107}
+            alt="Logo"
+            className="wl mb-4 !h-[6.55rem] !w-52"
+          />
         </Link>
         <h1 className="text-4xl font-bold text-orange-500">
           <b>India&apos;s first eCommerce</b>
@@ -76,8 +82,8 @@ const LoginPage = () => {
       </div>
       <div className="wrapper z-20 w-96 rounded-lg bg-white p-10 shadow-lg">
         <form onSubmit={validateInput}>
-          <Link href="/">
-            <Image src="/images/blueLogoo.png" alt="Logo" width={100} height={100} className="bl mb-5 cursor-pointer" />
+          <Link href="/" className="flex w-full justify-center">
+            <Image src="/images/blueLogoo.png" width={138} height={72} alt="Logo" className="bl mb-5 cursor-pointer" />
           </Link>
           <h1 className="llll">
             <b>Learners Login</b>
