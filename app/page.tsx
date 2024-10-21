@@ -1,8 +1,8 @@
 "use client"
 // app/page.tsx (or pages/index.tsx if using pages directory)
 import Image from "next/image"
-import React, { useState } from "react"
 import Link from "next/link"
+import React, { useState } from "react"
 
 // Define the structure of error state
 interface ErrorState {
@@ -50,7 +50,14 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="relative flex min-h-screen bg-cover bg-center bg-no-repeat">
+    <div
+      className={`relative flex min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500 bg-cover bg-center bg-no-repeat`}
+      style={{
+        backgroundImage: `url('/images/image 4.png')`,
+      }}
+    >
+      <div className="absolute size-full bg-gradient-to-b from-[#0b00ae] to-[#ff9500] opacity-[50%]" />
+
       <div className="left z-20 flex flex-col justify-center p-8">
         <Link href="/">
           <Image
